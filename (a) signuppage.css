@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+  padding: 5vw;
+  min-height: 100vh;
+
+  background-image: url("https://i.pinimg.com/736x/07/c7/54/07c7540042caafb284fd453e9e20325e.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  -webkit-text-stroke: 1px white;
+  color: rgb(203, 147, 255);
+
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  color: rgb(147, 147, 147);
+  -webkit-text-stroke: 0.5px rgb(255, 243, 243);
+  margin-bottom: 1rem;
+}
+
+.firsth2 {
+    margin-top: 3.5rem;
+}
+
+.anton {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.fredoka {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+p,
+ul {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: rgb(203, 147, 255);
+
+  padding: 16px 22px;
+  border-radius: 12px;
+
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+
+  max-width: 700px;
+  width: 100%;
+
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  text-align: left;
+  padding-left: 40px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.buttoncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.signupbtn,
+.loginbtn {
+  padding: 12px 24px;
+
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  border: none;
+  border-radius: 15px;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+
+  min-width: 140px;
+}
+
+.signupbtn {
+  background-color: rgb(147, 255, 250);
+  color: white;
+}
+
+.signupbtn:hover {
+  background-color: white;
+  color: rgb(147, 255, 250);
+  transform: scale(1.05);
+}
+
+.loginbtn {
+  background-color: rgb(203, 147, 255);
+  color: white;
+}
+
+.loginbtn:hover {
+  background-color: white;
+  color: rgb(203, 147, 255);
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 8vw;
+  }
+
+  h1 {
+    margin-bottom: 2.5rem;
+  }
+
+  .buttoncontainer {
+    flex-direction: column;
+  }
+
+  .signupbtn,
+  .loginbtn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+h4 {
+    font-family: 'impact', sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: rgb(255, 255, 255);
+}
