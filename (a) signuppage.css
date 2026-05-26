@@ -9,10 +9,14 @@ body {
   padding: 5vw;
   min-height: 100vh;
 
-  background-image: url("https://i.pinimg.com/736x/07/c7/54/07c7540042caafb284fd453e9e20325e.jpg");
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgb(134, 186, 232)),
+    url("https://i.pinimg.com/1200x/7e/dc/89/7edc898e5849883a172b7319ec6cecd0.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 
   display: flex;
   flex-direction: column;
@@ -24,12 +28,56 @@ body {
 
 h1 {
   font-family: 'Pacifico', cursive;
-  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-size: clamp(4rem, 8vw, 7rem);
   -webkit-text-stroke: 1px white;
   color: rgb(203, 147, 255);
 
+  background-color: var(--c1);
+  padding: clamp(0.5rem, 2vw, 3rem) clamp(1rem, 4vw, 2rem);
   line-height: 1.2;
-  margin-bottom: 2rem;
+  --c1: rgb(147, 147, 147);
+  --c2: rgb(147, 255, 250);
+  --c3: rgb(203, 147, 255);
+
+  box-shadow:
+    0.4rem 0.4rem 0rem var(--c2),
+    0.8rem 0.8rem 0rem var(--c3);
+
+  animation: shadowCycle 1s linear infinite;
+  transition: box-shadow 0.5s ease;
+}
+
+@keyframes shadowCycle {
+  0% {
+    --c1: rgb(147, 147, 147);
+    --c2: rgb(147, 255, 250);
+    --c3: rgb(203, 147, 255);
+  }
+
+  20% {
+    --c1: rgb(147, 255, 250);
+    --c2: rgb(203, 147, 255);
+    --c3: rgb(147, 147, 147);
+  }
+
+  40% {
+    --c1: rgb(203, 147, 255);
+    --c2: rgb(147, 147, 147);
+      --c3: rgb(147, 255, 250);
+  }
+  
+  60% {
+    --c1: rgb(147, 147, 147);
+    --c2: rgb(147, 255, 250);
+    --c3: rgb(203, 147, 255);
+  }
+
+  80% {
+    --c1: rgb(147, 255, 250);
+    --c2: rgb(203, 147, 255);
+    --c3: rgb(147, 147, 147);
+  }
+
 }
 
 h2 {
@@ -38,6 +86,7 @@ h2 {
   color: rgb(147, 147, 147);
   -webkit-text-stroke: 0.5px rgb(255, 243, 243);
   margin-bottom: 1rem;
+  
 }
 
 .firsth2 {
@@ -88,20 +137,19 @@ li {
   flex-wrap: wrap;
 
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .signupbtn,
 .loginbtn {
-  padding: 12px 24px;
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
 
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.3rem, 2.5vw, 1.2rem);
 
   cursor: pointer;
   transition: all 0.3s ease;
 
   border: none;
-  border-radius: 15px;
 
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
@@ -110,19 +158,21 @@ li {
 }
 
 .signupbtn {
-  background-color: rgb(147, 255, 250);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(147, 255, 250);
+  box-shadow: 0.2rem 0.2rem 0rem rgb(250, 255, 147);
 }
 
 .signupbtn:hover {
-  background-color: white;
-  color: rgb(147, 255, 250);
+  background-color: rgb(147, 255, 250);
+  color: rgb(255, 255, 255);
   transform: scale(1.05);
 }
 
 .loginbtn {
   background-color: rgb(203, 147, 255);
   color: white;
+  box-shadow: 0.2rem 0.2rem 0rem rgb(250, 255, 147);
 }
 
 .loginbtn:hover {
@@ -140,9 +190,6 @@ li {
     margin-bottom: 2.5rem;
   }
 
-  .buttoncontainer {
-    flex-direction: column;
-  }
 
   .signupbtn,
   .loginbtn {
@@ -152,7 +199,51 @@ li {
 }
 
 h4 {
-    font-family: 'impact', sans-serif;
     font-size: clamp(0.8rem, 2vw, 1rem);
     color: rgb(255, 255, 255);
 }
+
+.contentcontainer {
+  margin-top: 2rem;
+}
+
+.homecontainer {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+
+  align-items: flex-start;
+
+  gap: 4rem;
+
+  flex-wrap: wrap;
+}
+
+.divider {
+  font-size: clamp(1rem, 2vw, 3rem);
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+
+.rightcontainer {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-width: clamp(0.125rem, 2vw, 0.5rem);
+  border-style: dashed;
+  border-color: rgb(255, 255, 255);
+}
+
+.leftcontainer,
+.rightcontainer {
+  flex: 1;
+  min-width: 300px;
+}
+
+.leftcontainer {
+  margin-top: clamp(0rem, 2vw, 4rem);
+}
+
+
